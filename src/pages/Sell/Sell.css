@@ -1,0 +1,525 @@
+ .sell-page {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 36px 24px 60px;
+     color: #172033;
+ }
+
+ .sell-hero {
+     padding: 38px 32px;
+     border-radius: 24px;
+     background: linear-gradient(125deg, #102a43, #1d4e89);
+     color: white;
+     margin-bottom: 28px;
+ }
+
+ .sell-eyebrow {
+     margin: 0 0 12px;
+     color: #b9dcff;
+     font-size: 12px;
+     font-weight: 800;
+     letter-spacing: 2px;
+ }
+
+ .sell-hero h1 {
+     margin: 0 0 12px;
+     font-size: clamp(28px, 4vw, 42px);
+     line-height: 1.15;
+ }
+
+ .sell-hero>p:last-child {
+     max-width: 650px;
+     margin: 0;
+     color: #e1ecf8;
+     line-height: 1.7;
+ }
+
+ .sell-choice-grid {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: 24px;
+     margin: 32px 0;
+ }
+
+ .sell-choice-card {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     min-height: 270px;
+     padding: 30px;
+     border: 1px solid #dce5ef;
+     border-radius: 20px;
+     background: #fff;
+     color: #172033;
+     text-align: left;
+     cursor: pointer;
+     box-shadow: 0 8px 26px rgba(15, 35, 60, 0.06);
+     transition: transform 0.2s ease, border-color 0.2s ease,
+         box-shadow 0.2s ease;
+ }
+
+ .sell-choice-card:hover {
+     transform: translateY(-4px);
+     border-color: #3478d4;
+     box-shadow: 0 16px 34px rgba(15, 35, 60, 0.12);
+ }
+
+ .sell-choice-card:focus-visible,
+ .sell-back-button:focus-visible,
+ .sell-submit-button:focus-visible,
+ .sell-cancel-button:focus-visible {
+     outline: 3px solid #75b5ff;
+     outline-offset: 3px;
+ }
+
+ .sell-choice-icon {
+     display: grid;
+     width: 68px;
+     height: 68px;
+     place-items: center;
+     border-radius: 18px;
+     background: #edf5ff;
+     font-size: 36px;
+ }
+
+ .sell-choice-card h2 {
+     margin: 22px 0 8px;
+     font-size: 24px;
+ }
+
+ .sell-choice-card p {
+     margin: 0 0 22px;
+     color: #65748b;
+     line-height: 1.7;
+ }
+
+ .sell-choice-action {
+     margin-top: auto;
+     color: #1765bf;
+     font-weight: 800;
+ }
+
+ .sell-form-card {
+     padding: 30px;
+     border: 1px solid #e0e7ef;
+     border-radius: 20px;
+     background: white;
+     box-shadow: 0 10px 32px rgba(15, 35, 60, 0.06);
+ }
+
+ .sell-back-button {
+     margin-bottom: 22px;
+     padding: 10px 14px;
+     border: 1px solid #d9e2ec;
+     border-radius: 9px;
+     background: #fff;
+     color: #245b98;
+     font-weight: 700;
+     cursor: pointer;
+ }
+
+ .sell-form-heading {
+     padding-bottom: 20px;
+     margin-bottom: 24px;
+     border-bottom: 1px solid #e9eef4;
+ }
+
+ .sell-form-heading h2 {
+     margin: 0 0 8px;
+     font-size: 27px;
+ }
+
+ .sell-form-heading p,
+ .sell-photo-section p {
+     margin: 0;
+     color: #718096;
+     line-height: 1.6;
+ }
+
+ .sell-error {
+     padding: 13px 16px;
+     border: 1px solid #fecaca;
+     border-radius: 10px;
+     background: #fff1f2;
+     color: #b42318;
+     line-height: 1.5;
+ }
+
+ .sell-form-grid {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: 22px;
+ }
+
+ .sell-field {
+     display: flex;
+     flex-direction: column;
+     gap: 9px;
+     min-width: 0;
+     margin-bottom: 20px;
+     color: #28364a;
+     font-size: 14px;
+     font-weight: 700;
+ }
+
+ .sell-field input,
+ .sell-field select,
+ .sell-field textarea {
+     width: 100%;
+     min-width: 0;
+     box-sizing: border-box;
+     padding: 13px 14px;
+     border: 1px solid #d7e0eb;
+     border-radius: 10px;
+     outline: none;
+     background: #fff;
+     color: #172033;
+     font: inherit;
+     font-weight: 400;
+     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+ }
+
+ .sell-field input,
+ .sell-field select {
+     min-height: 48px;
+ }
+
+ .sell-field input:focus,
+ .sell-field select:focus,
+ .sell-field textarea:focus {
+     border-color: #3478d4;
+     box-shadow: 0 0 0 3px rgba(52, 120, 212, 0.13);
+ }
+
+ .sell-field input::placeholder,
+ .sell-field textarea::placeholder {
+     color: #9aa7b7;
+ }
+
+ .sell-photo-section {
+     padding-top: 12px;
+     margin-top: 8px;
+ }
+
+ .sell-photo-section h3 {
+     margin: 0 0 8px;
+     font-size: 20px;
+ }
+
+ .sell-upload-box {
+     display: flex;
+     min-height: 165px;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 9px;
+     padding: 22px;
+     margin-top: 18px;
+     border: 2px dashed #bdcfe3;
+     border-radius: 16px;
+     background: #f8fbff;
+     color: #26384e;
+     text-align: center;
+     cursor: pointer;
+     transition: background 0.2s ease, border-color 0.2s ease;
+ }
+
+ .sell-upload-box:hover {
+     border-color: #3478d4;
+     background: #f0f7ff;
+ }
+
+ .sell-upload-icon {
+     display: grid;
+     width: 44px;
+     height: 44px;
+     place-items: center;
+     border-radius: 50%;
+     background: #e2efff;
+     color: #1765bf;
+     font-size: 26px;
+ }
+
+ .sell-upload-box>span:not(.sell-upload-icon) {
+     color: #718096;
+     font-size: 13px;
+ }
+
+ .sell-upload-box input {
+     width: 100%;
+     max-width: 250px;
+     font-size: 12px;
+ }
+
+ .sell-image-preview-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+     gap: 14px;
+     margin-top: 18px;
+ }
+
+ .sell-image-preview {
+     position: relative;
+     overflow: hidden;
+     height: 125px;
+     border-radius: 12px;
+     background: #eef2f7;
+ }
+
+ .sell-image-preview img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ .sell-image-preview button {
+     position: absolute;
+     top: 7px;
+     right: 7px;
+     display: grid;
+     width: 30px;
+     height: 30px;
+     place-items: center;
+     border: 0;
+     border-radius: 50%;
+     background: rgba(15, 23, 42, 0.85);
+     color: #fff;
+     font-size: 22px;
+     cursor: pointer;
+ }
+
+ .sell-description-field {
+     margin-top: 24px;
+ }
+
+ .sell-field textarea {
+     resize: vertical;
+ }
+
+ .sell-form-actions {
+     display: flex;
+     justify-content: flex-end;
+     gap: 14px;
+     padding-top: 8px;
+     margin-top: 8px;
+ }
+
+ .sell-submit-button,
+ .sell-cancel-button {
+     display: inline-flex;
+     min-height: 48px;
+     align-items: center;
+     justify-content: center;
+     padding: 0 24px;
+     border: 0;
+     border-radius: 10px;
+     font-size: 14px;
+     font-weight: 800;
+     text-decoration: none;
+     cursor: pointer;
+     transition: background 0.2s ease, transform 0.2s ease;
+ }
+
+ .sell-submit-button {
+     background: #1765bf;
+     color: white;
+ }
+
+ .sell-submit-button:hover {
+     transform: translateY(-1px);
+     background: #104e98;
+ }
+
+ .sell-cancel-button {
+     border: 1px solid #d7e0eb;
+     background: white;
+     color: #42526a;
+ }
+
+ .sell-cancel-button:hover {
+     background: #f3f6fa;
+ }
+
+ .sell-demo-note,
+ .sell-bottom-link {
+     margin: 22px 0 0;
+     color: #718096;
+     font-size: 13px;
+     line-height: 1.7;
+     text-align: center;
+ }
+
+ .sell-bottom-link a {
+     color: #1765bf;
+     font-weight: 700;
+     text-decoration: none;
+ }
+
+ .sell-bottom-link a:hover {
+     text-decoration: underline;
+ }
+
+ @media (max-width: 700px) {
+     .sell-page {
+         padding: 22px 14px 40px;
+     }
+
+     .sell-hero {
+         padding: 28px 22px;
+         border-radius: 18px;
+     }
+
+     .sell-choice-grid {
+         grid-template-columns: 1fr;
+         gap: 16px;
+     }
+
+     .sell-choice-card {
+         min-height: 230px;
+         padding: 24px;
+     }
+
+     .sell-form-card {
+         padding: 20px 16px;
+     }
+
+     .sell-form-grid {
+         grid-template-columns: 1fr;
+         gap: 0;
+     }
+
+     .sell-form-heading h2 {
+         font-size: 23px;
+     }
+
+     .sell-form-actions {
+         flex-direction: column-reverse;
+     }
+
+     .sell-submit-button,
+     .sell-cancel-button {
+         width: 100%;
+         box-sizing: border-box;
+     }
+ }
+
+
+ /* Sky blue AutoMarket styling */
+
+ .sell-choice-card {
+     background: linear-gradient(145deg, #ffffff, #e0f2fe);
+     border-color: #bae6fd;
+ }
+
+ .sell-choice-card:hover {
+     background: linear-gradient(145deg, #f0f9ff, #d0edff);
+     border-color: #0284c7;
+ }
+
+ .sell-choice-action,
+ .sell-bottom-link a {
+     color: #0284c7;
+ }
+
+ .sell-submit-button {
+     background: linear-gradient(135deg, #0ea5e9, #0284c7);
+     color: #ffffff;
+     box-shadow: 0 5px 14px rgba(2, 132, 199, 0.18);
+ }
+
+ .sell-submit-button:hover {
+     background: linear-gradient(135deg, #0284c7, #0369a1);
+ }
+
+ .sell-upload-box {
+     background: #f0f9ff;
+     border-color: #7dd3fc;
+ }
+
+ .sell-back-button:hover,
+ .sell-cancel-button:hover {
+     background: #e0f2fe;
+     border-color: #7dd3fc;
+ }
+
+
+ /* Dark automotive theme */
+
+ .sell-page {
+     color: #f1f5f9;
+ }
+
+ .sell-choice-card,
+ .sell-form-card {
+     background: #172b45;
+     color: #f1f5f9;
+     border-color: #29435f;
+ }
+
+ .sell-choice-card:hover {
+     background: #1b3553;
+     border-color: #38bdf8;
+ }
+
+ .sell-choice-card p,
+ .sell-form-heading p,
+ .sell-photo-section p {
+     color: #a7b7ca;
+ }
+
+ .sell-choice-icon {
+     background: #203f5e;
+ }
+
+ .sell-choice-action,
+ .sell-bottom-link a {
+     color: #38bdf8;
+ }
+
+ .sell-field {
+     color: #e2eaf4;
+ }
+
+ .sell-field input,
+ .sell-field select,
+ .sell-field textarea {
+     background: #0f2035;
+     color: #f1f5f9;
+     border-color: #35516f;
+ }
+
+ .sell-field input::placeholder,
+ .sell-field textarea::placeholder {
+     color: #8da2ba;
+ }
+
+ .sell-upload-box {
+     background: #102740;
+     color: #f1f5f9;
+     border-color: #38bdf8;
+ }
+
+ .sell-upload-box>span:not(.sell-upload-icon) {
+     color: #a7b7ca;
+ }
+
+ .sell-back-button,
+ .sell-cancel-button {
+     background: #203750;
+     color: #e2eaf4;
+     border-color: #35516f;
+ }
+
+ .sell-back-button:hover,
+ .sell-cancel-button:hover {
+     background: #294866;
+ }
+
+ .sell-form-heading {
+     border-bottom-color: #29435f;
+ }
+
+ .sell-demo-note,
+ .sell-bottom-link {
+     color: #a7b7ca;
+ }

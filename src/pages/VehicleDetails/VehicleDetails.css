@@ -1,0 +1,1124 @@
+ /* =========================================
+   AutoMarket - Professional Vehicle Details
+   ========================================= */
+
+ .vd-page {
+     --vd-primary: #2457e6;
+     --vd-primary-dark: #1945c4;
+     --vd-heading: #14213d;
+     --vd-text: #536178;
+     --vd-muted: #8290a5;
+     --vd-border: #e6ebf2;
+     --vd-surface: #ffffff;
+
+     width: 100%;
+     max-width: 1440px;
+     min-height: 100vh;
+     margin: 0 auto;
+     padding: 30px 5% 70px;
+     color: var(--vd-heading);
+     background: #f7f9fc;
+     box-sizing: border-box;
+ }
+
+ .vd-page *,
+ .vd-page *::before,
+ .vd-page *::after {
+     box-sizing: border-box;
+ }
+
+ .vd-page a {
+     text-decoration: none;
+ }
+
+ /* Breadcrumb */
+
+ .vd-breadcrumb {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 11px;
+     margin-bottom: 30px;
+     color: var(--vd-muted);
+     font-size: 13px;
+ }
+
+ .vd-breadcrumb a {
+     color: #65738b;
+     transition: color 0.2s ease;
+ }
+
+ .vd-breadcrumb a:hover {
+     color: var(--vd-primary);
+ }
+
+ .vd-breadcrumb-current {
+     max-width: 300px;
+     overflow: hidden;
+     color: var(--vd-heading);
+     font-weight: 700;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+ }
+
+ /* Page heading */
+
+ .vd-page-heading {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 24px;
+     margin-bottom: 30px;
+ }
+
+ .vd-heading-label,
+ .vd-eyebrow,
+ .vd-section-kicker {
+     display: block;
+     color: var(--vd-primary);
+     font-size: 10px;
+     font-weight: 800;
+     letter-spacing: 1.8px;
+     line-height: 1.6;
+ }
+
+ .vd-page-heading h1 {
+     margin: 7px 0 8px;
+     color: var(--vd-heading);
+     font-size: clamp(27px, 3vw, 36px);
+     font-weight: 850;
+     letter-spacing: -1.2px;
+     line-height: 1.2;
+ }
+
+ .vd-page-heading p {
+     margin: 0;
+     color: var(--vd-text);
+     font-size: 14px;
+     line-height: 1.7;
+ }
+
+ .vd-outline-link {
+     display: inline-flex;
+     flex-shrink: 0;
+     align-items: center;
+     justify-content: center;
+     gap: 9px;
+     min-height: 44px;
+     padding: 0 17px;
+     color: var(--vd-heading);
+     background: #ffffff;
+     border: 1px solid var(--vd-border);
+     border-radius: 10px;
+     font-size: 13px;
+     font-weight: 700;
+     transition:
+         border-color 0.2s ease,
+         color 0.2s ease,
+         transform 0.2s ease;
+ }
+
+ .vd-outline-link:hover {
+     color: var(--vd-primary);
+     border-color: #b7c8fb;
+     transform: translateY(-1px);
+ }
+
+ /* Main two-column layout */
+
+ .vd-layout {
+     display: grid;
+     grid-template-columns: minmax(0, 1fr) 340px;
+     align-items: start;
+     gap: 28px;
+ }
+
+ .vd-main {
+     display: grid;
+     gap: 24px;
+     min-width: 0;
+ }
+
+ .vd-sidebar {
+     position: sticky;
+     top: 95px;
+     display: grid;
+     gap: 18px;
+     min-width: 0;
+ }
+
+ /* Vehicle gallery */
+
+ .vd-gallery-card {
+     min-width: 0;
+     overflow: hidden;
+     background: var(--vd-surface);
+     border: 1px solid var(--vd-border);
+     border-radius: 18px;
+     box-shadow: 0 8px 30px rgba(24, 42, 76, 0.045);
+ }
+
+ .vd-image-container {
+     position: relative;
+     height: clamp(330px, 37vw, 490px);
+     overflow: hidden;
+     background:
+         radial-gradient(circle at 50% 40%, #f7f9fc, #e8edf5);
+ }
+
+ .vd-image-container img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.55s ease;
+ }
+
+ .vd-gallery-card:hover .vd-image-container img {
+     transform: scale(1.025);
+ }
+
+ .vd-image-placeholder {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 100%;
+     color: var(--vd-muted);
+ }
+
+ .vd-image-placeholder>span {
+     font-size: 54px;
+ }
+
+ .vd-image-placeholder p {
+     font-size: 13px;
+ }
+
+ .vd-type-badge {
+     position: absolute;
+     top: 20px;
+     left: 20px;
+     padding: 9px 14px;
+     color: #ffffff;
+     background: rgba(20, 33, 61, 0.88);
+     border: 1px solid rgba(255, 255, 255, 0.22);
+     border-radius: 8px;
+     font-size: 11px;
+     font-weight: 800;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     backdrop-filter: blur(10px);
+ }
+
+ .vd-wishlist-button {
+     position: absolute;
+     top: 17px;
+     right: 18px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 46px;
+     height: 46px;
+     color: #263650;
+     background: #ffffff;
+     border: 1px solid rgba(20, 33, 61, 0.08);
+     border-radius: 50%;
+     box-shadow: 0 4px 16px rgba(20, 33, 61, 0.12);
+     cursor: pointer;
+     transition:
+         color 0.2s ease,
+         background 0.2s ease,
+         transform 0.2s ease;
+ }
+
+ .vd-wishlist-button span {
+     font-size: 25px;
+     line-height: 1;
+ }
+
+ .vd-wishlist-button:hover {
+     color: #e11d48;
+     transform: scale(1.07);
+ }
+
+ .vd-wishlist-button.is-wishlisted {
+     color: #e11d48;
+     background: #fff1f3;
+ }
+
+ .vd-image-caption {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     display: flex;
+     align-items: center;
+     gap: 9px;
+     padding: 25px 22px 17px;
+     color: #ffffff;
+     background: linear-gradient(to top,
+             rgba(13, 25, 47, 0.65),
+             transparent);
+     font-size: 12px;
+     font-weight: 600;
+ }
+
+ .vd-image-dot {
+     width: 7px;
+     height: 7px;
+     flex-shrink: 0;
+     background: #6ee7b7;
+     border-radius: 50%;
+ }
+
+ /* Information cards */
+
+ .vd-info-card,
+ .vd-price-card,
+ .vd-seller-card {
+     min-width: 0;
+     padding: 28px;
+     background: var(--vd-surface);
+     border: 1px solid var(--vd-border);
+     border-radius: 16px;
+     box-shadow: 0 8px 30px rgba(24, 42, 76, 0.035);
+ }
+
+ .vd-vehicle-heading {
+     display: flex;
+     align-items: flex-start;
+     justify-content: space-between;
+     gap: 20px;
+ }
+
+ .vd-vehicle-title {
+     min-width: 0;
+ }
+
+ .vd-vehicle-title .vd-eyebrow {
+     margin: 0 0 8px;
+ }
+
+ .vd-vehicle-title h2 {
+     margin: 0 0 12px;
+     color: var(--vd-heading);
+     font-size: clamp(25px, 3vw, 34px);
+     font-weight: 850;
+     letter-spacing: -0.9px;
+     line-height: 1.3;
+     overflow-wrap: anywhere;
+ }
+
+ .vd-location {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     margin: 0;
+     color: var(--vd-text);
+     font-size: 13px;
+ }
+
+ .vd-location span {
+     color: var(--vd-primary);
+     font-size: 19px;
+ }
+
+ .vd-mobile-price {
+     display: none;
+     flex-shrink: 0;
+ }
+
+ .vd-divider {
+     height: 1px;
+     margin: 24px 0;
+     background: var(--vd-border);
+ }
+
+ /* Specifications */
+
+ .vd-section-heading {
+     display: flex;
+     align-items: flex-end;
+     justify-content: space-between;
+     gap: 14px;
+     margin-bottom: 20px;
+ }
+
+ .vd-section-heading h3,
+ .vd-description-card h3 {
+     margin: 5px 0 0;
+     color: var(--vd-heading);
+     font-size: 20px;
+     font-weight: 800;
+     letter-spacing: -0.35px;
+ }
+
+ .vd-spec-count {
+     flex-shrink: 0;
+     padding: 6px 10px;
+     color: #64748b;
+     background: #f3f6fb;
+     border-radius: 7px;
+     font-size: 11px;
+     font-weight: 700;
+ }
+
+ .vd-spec-grid {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: 12px;
+ }
+
+ .vd-spec {
+     display: flex;
+     align-items: center;
+     gap: 13px;
+     min-width: 0;
+     min-height: 83px;
+     padding: 15px;
+     background: #fafbfd;
+     border: 1px solid #edf0f6;
+     border-radius: 11px;
+     transition:
+         border-color 0.2s ease,
+         background 0.2s ease;
+ }
+
+ .vd-spec:hover {
+     background: #f6f8ff;
+     border-color: #d7e2ff;
+ }
+
+ .vd-spec-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 41px;
+     height: 41px;
+     flex-shrink: 0;
+     color: var(--vd-primary);
+     background: #eaf0ff;
+     border-radius: 10px;
+     font-size: 20px;
+ }
+
+ .vd-spec-content {
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+     min-width: 0;
+ }
+
+ .vd-spec-content span {
+     color: var(--vd-muted);
+     font-size: 11px;
+     font-weight: 500;
+ }
+
+ .vd-spec-content strong {
+     color: var(--vd-heading);
+     font-size: 13px;
+     font-weight: 750;
+     overflow-wrap: anywhere;
+ }
+
+ /* Vehicle description */
+
+ .vd-description-card .vd-section-kicker {
+     margin-bottom: 5px;
+ }
+
+ .vd-description-card h3 {
+     margin: 0 0 16px;
+     font-size: 22px;
+ }
+
+ .vd-description {
+     margin: 0;
+     color: var(--vd-text);
+     font-size: 14px;
+     line-height: 1.95;
+     overflow-wrap: anywhere;
+ }
+
+ .vd-trust-note {
+     display: flex;
+     align-items: flex-start;
+     gap: 11px;
+     margin-top: 22px;
+     padding: 15px;
+     background: #f0faf5;
+     border: 1px solid #d8f2e4;
+     border-radius: 10px;
+ }
+
+ .vd-trust-note>span {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 22px;
+     height: 22px;
+     flex-shrink: 0;
+     color: #ffffff;
+     background: #16865b;
+     border-radius: 50%;
+     font-size: 12px;
+     font-weight: 800;
+ }
+
+ .vd-trust-note p {
+     margin: 0;
+     color: #35664e;
+     font-size: 12px;
+     line-height: 1.8;
+ }
+
+ /* Price panel */
+
+ .vd-price-card {
+     padding: 25px;
+     border-top: 3px solid var(--vd-primary);
+ }
+
+ .vd-price-topline {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 10px;
+ }
+
+ .vd-price-label {
+     color: var(--vd-muted);
+     font-size: 10px;
+     font-weight: 800;
+     letter-spacing: 1.1px;
+ }
+
+ .vd-price-tag {
+     padding: 5px 8px;
+     color: #2457c7;
+     background: #edf3ff;
+     border-radius: 5px;
+     font-size: 10px;
+     font-weight: 750;
+ }
+
+ .vd-price-card h2 {
+     margin: 17px 0 12px;
+     color: var(--vd-heading);
+     font-size: clamp(29px, 3vw, 37px);
+     font-weight: 850;
+     letter-spacing: -1px;
+     line-height: 1.2;
+     overflow-wrap: anywhere;
+ }
+
+ .vd-price-note {
+     margin: 0 0 23px;
+     color: var(--vd-text);
+     font-size: 12px;
+     line-height: 1.85;
+ }
+
+ .vd-primary-button,
+ .vd-secondary-button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 9px;
+     width: 100%;
+     min-height: 49px;
+     padding: 13px 15px;
+     border-radius: 9px;
+     font-family: inherit;
+     font-size: 13px;
+     font-weight: 750;
+     text-align: center;
+     cursor: pointer;
+     transition:
+         background 0.2s ease,
+         border-color 0.2s ease,
+         color 0.2s ease,
+         transform 0.2s ease,
+         box-shadow 0.2s ease;
+ }
+
+ .vd-primary-button {
+     color: #ffffff;
+     background: var(--vd-primary);
+     border: 1px solid var(--vd-primary);
+     box-shadow: 0 5px 12px rgba(36, 87, 230, 0.14);
+ }
+
+ .vd-primary-button:hover {
+     color: #ffffff;
+     background: var(--vd-primary-dark);
+     border-color: var(--vd-primary-dark);
+     box-shadow: 0 7px 18px rgba(36, 87, 230, 0.2);
+     transform: translateY(-1px);
+ }
+
+ .vd-secondary-button {
+     margin-top: 11px;
+     color: var(--vd-heading);
+     background: #ffffff;
+     border: 1px solid #dce3ee;
+ }
+
+ .vd-secondary-button:hover {
+     color: var(--vd-primary);
+     background: #f6f8ff;
+     border-color: #b9cafa;
+ }
+
+ .vd-secure-note {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 7px;
+     margin-top: 19px;
+     color: #718096;
+     font-size: 11px;
+     font-weight: 600;
+ }
+
+ .vd-secure-note span {
+     color: #159568;
+     font-size: 14px;
+     font-weight: 800;
+ }
+
+ /* Seller card */
+
+ .vd-seller-card {
+     padding: 24px;
+ }
+
+ .vd-seller-card h3 {
+     margin: 6px 0 21px;
+     color: var(--vd-heading);
+     font-size: 19px;
+     font-weight: 800;
+ }
+
+ .vd-seller-profile {
+     display: flex;
+     align-items: center;
+     gap: 13px;
+     min-width: 0;
+ }
+
+ .vd-seller-avatar {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 49px;
+     height: 49px;
+     flex-shrink: 0;
+     color: #2457c7;
+     background: #eaf0ff;
+     border: 1px solid #dce6ff;
+     border-radius: 14px;
+     font-size: 21px;
+     font-weight: 800;
+ }
+
+ .vd-seller-details {
+     min-width: 0;
+ }
+
+ .vd-seller-details strong {
+     color: var(--vd-heading);
+     font-size: 13px;
+     font-weight: 800;
+ }
+
+ .vd-seller-details p {
+     margin: 5px 0;
+     color: var(--vd-text);
+     font-size: 12px;
+ }
+
+ .vd-seller-status {
+     display: inline-flex;
+     align-items: center;
+     gap: 6px;
+     color: #718096;
+     font-size: 10px;
+ }
+
+ .vd-seller-status>span {
+     width: 6px;
+     height: 6px;
+     background: #16a36a;
+     border-radius: 50%;
+ }
+
+ .vd-seller-divider {
+     height: 1px;
+     margin: 20px 0;
+     background: var(--vd-border);
+ }
+
+ .vd-seller-note {
+     margin: 0;
+     color: var(--vd-text);
+     font-size: 12px;
+     line-height: 1.9;
+ }
+
+ /* Buying advice */
+
+ .vd-help-card {
+     display: flex;
+     align-items: flex-start;
+     gap: 12px;
+     padding: 17px;
+     background: #eef5ff;
+     border: 1px solid #dbe8ff;
+     border-radius: 12px;
+ }
+
+ .vd-help-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 23px;
+     height: 23px;
+     flex-shrink: 0;
+     color: #ffffff;
+     background: var(--vd-primary);
+     border-radius: 50%;
+     font-size: 13px;
+     font-weight: 800;
+ }
+
+ .vd-help-card strong {
+     display: block;
+     margin-bottom: 6px;
+     color: #1e3a70;
+     font-size: 12px;
+ }
+
+ .vd-help-card p {
+     margin: 0;
+     color: #526b92;
+     font-size: 11px;
+     line-height: 1.8;
+ }
+
+ /* Back navigation */
+
+ .vd-back-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 9px;
+     min-height: 48px;
+     padding: 13px;
+     color: var(--vd-primary);
+     background: #ffffff;
+     border: 1px solid #dce5f7;
+     border-radius: 10px;
+     font-size: 13px;
+     font-weight: 750;
+     transition:
+         background 0.2s ease,
+         border-color 0.2s ease;
+ }
+
+ .vd-back-link:hover {
+     color: var(--vd-primary-dark);
+     background: #edf3ff;
+     border-color: #c8d7fc;
+ }
+
+ /* Not found */
+
+ .vd-not-found {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 60vh;
+     padding: 35px 20px;
+     text-align: center;
+ }
+
+ .vd-not-found-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 76px;
+     height: 76px;
+     margin-bottom: 25px;
+     color: var(--vd-primary);
+     background: #eaf0ff;
+     border-radius: 22px;
+     font-size: 45px;
+ }
+
+ .vd-not-found .vd-eyebrow {
+     margin: 0 0 8px;
+ }
+
+ .vd-not-found h1 {
+     margin: 0 0 12px;
+     color: var(--vd-heading);
+     font-size: clamp(25px, 4vw, 34px);
+     font-weight: 850;
+ }
+
+ .vd-not-found p:not(.vd-eyebrow) {
+     max-width: 440px;
+     margin: 0 0 25px;
+     color: var(--vd-text);
+     font-size: 14px;
+     line-height: 1.8;
+ }
+
+ .vd-not-found .vd-primary-button {
+     width: auto;
+     min-width: 190px;
+ }
+
+ /* Keyboard accessibility */
+
+ .vd-page button:focus-visible,
+ .vd-page a:focus-visible {
+     outline: 3px solid rgba(36, 87, 230, 0.45);
+     outline-offset: 3px;
+ }
+
+ /* Tablet */
+
+ @media (max-width: 1050px) {
+     .vd-page {
+         padding-right: 4%;
+         padding-left: 4%;
+     }
+
+     .vd-layout {
+         grid-template-columns: minmax(0, 1fr) 300px;
+         gap: 20px;
+     }
+
+     .vd-info-card {
+         padding: 23px;
+     }
+
+     .vd-price-card,
+     .vd-seller-card {
+         padding: 21px;
+     }
+
+     .vd-image-container {
+         height: 350px;
+     }
+ }
+
+ /* Small tablets */
+
+ @media (max-width: 800px) {
+     .vd-layout {
+         grid-template-columns: minmax(0, 1fr);
+         gap: 22px;
+     }
+
+     .vd-sidebar {
+         position: static;
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+         align-items: start;
+     }
+
+     .vd-price-card {
+         grid-column: 1 / -1;
+     }
+
+     .vd-image-container {
+         height: clamp(280px, 55vw, 420px);
+     }
+ }
+
+ /* Mobile */
+
+ @media (max-width: 540px) {
+     .vd-page {
+         padding: 21px 15px 40px;
+     }
+
+     .vd-breadcrumb {
+         gap: 7px;
+         margin-bottom: 24px;
+         font-size: 11px;
+     }
+
+     .vd-breadcrumb-current {
+         max-width: 130px;
+     }
+
+     .vd-page-heading {
+         align-items: flex-start;
+         gap: 12px;
+         margin-bottom: 23px;
+     }
+
+     .vd-page-heading h1 {
+         font-size: 27px;
+         letter-spacing: -0.7px;
+     }
+
+     .vd-page-heading p {
+         max-width: 250px;
+         font-size: 12px;
+     }
+
+     .vd-outline-link {
+         min-height: 38px;
+         gap: 5px;
+         padding: 0 10px;
+         font-size: 11px;
+     }
+
+     .vd-heading-label,
+     .vd-section-kicker {
+         font-size: 9px;
+         letter-spacing: 1.2px;
+     }
+
+     .vd-main {
+         gap: 17px;
+     }
+
+     .vd-layout {
+         gap: 18px;
+     }
+
+     .vd-gallery-card {
+         border-radius: 13px;
+     }
+
+     .vd-image-container {
+         height: 245px;
+     }
+
+     .vd-type-badge {
+         top: 13px;
+         left: 13px;
+         padding: 8px 10px;
+         font-size: 10px;
+     }
+
+     .vd-wishlist-button {
+         top: 10px;
+         right: 10px;
+         width: 40px;
+         height: 40px;
+     }
+
+     .vd-wishlist-button span {
+         font-size: 23px;
+     }
+
+     .vd-image-caption {
+         padding: 22px 14px 13px;
+         font-size: 11px;
+     }
+
+     .vd-info-card,
+     .vd-price-card,
+     .vd-seller-card {
+         padding: 20px 16px;
+         border-radius: 13px;
+     }
+
+     .vd-vehicle-heading {
+         display: block;
+     }
+
+     .vd-vehicle-title h2 {
+         font-size: 26px;
+         letter-spacing: -0.5px;
+     }
+
+     .vd-location {
+         font-size: 12px;
+     }
+
+     .vd-mobile-price {
+         display: flex;
+         flex-direction: column;
+         gap: 5px;
+         margin-top: 17px;
+         padding: 13px;
+         background: #f5f7ff;
+         border: 1px solid #e6ebff;
+         border-radius: 9px;
+     }
+
+     .vd-mobile-price span {
+         color: var(--vd-muted);
+         font-size: 10px;
+         font-weight: 700;
+         text-transform: uppercase;
+         letter-spacing: 0.8px;
+     }
+
+     .vd-mobile-price strong {
+         color: var(--vd-heading);
+         font-size: 23px;
+         font-weight: 850;
+         overflow-wrap: anywhere;
+     }
+
+     .vd-divider {
+         margin: 19px 0;
+     }
+
+     .vd-section-heading {
+         align-items: flex-start;
+         margin-bottom: 15px;
+     }
+
+     .vd-section-heading h3,
+     .vd-description-card h3 {
+         font-size: 18px;
+     }
+
+     .vd-spec-count {
+         padding: 5px 7px;
+         font-size: 9px;
+     }
+
+     .vd-spec-grid {
+         gap: 9px;
+     }
+
+     .vd-spec {
+         min-height: 80px;
+         gap: 9px;
+         padding: 11px 9px;
+     }
+
+     .vd-spec-icon {
+         width: 32px;
+         height: 32px;
+         border-radius: 8px;
+         font-size: 16px;
+     }
+
+     .vd-spec-content {
+         gap: 5px;
+     }
+
+     .vd-spec-content span {
+         font-size: 10px;
+         line-height: 1.4;
+     }
+
+     .vd-spec-content strong {
+         font-size: 11px;
+         line-height: 1.5;
+     }
+
+     .vd-description-card h3 {
+         margin-bottom: 12px;
+     }
+
+     .vd-description {
+         font-size: 13px;
+         line-height: 1.85;
+     }
+
+     .vd-trust-note {
+         gap: 9px;
+         margin-top: 17px;
+         padding: 12px;
+     }
+
+     .vd-trust-note p {
+         font-size: 11px;
+     }
+
+     .vd-sidebar {
+         grid-template-columns: minmax(0, 1fr);
+         gap: 15px;
+     }
+
+     .vd-price-card {
+         grid-column: auto;
+     }
+
+     .vd-price-card h2 {
+         font-size: 32px;
+     }
+
+     .vd-price-label {
+         font-size: 9px;
+     }
+
+     .vd-seller-card h3 {
+         font-size: 18px;
+     }
+
+     .vd-help-card {
+         padding: 14px;
+     }
+
+     .vd-not-found {
+         min-height: 55vh;
+     }
+ }
+
+ /* Very small phones */
+
+ @media (max-width: 360px) {
+     .vd-page {
+         padding-right: 11px;
+         padding-left: 11px;
+     }
+
+     .vd-outline-link {
+         padding: 0 7px;
+         font-size: 10px;
+     }
+
+     .vd-image-container {
+         height: 210px;
+     }
+
+     .vd-info-card {
+         padding: 17px 12px;
+     }
+
+     .vd-spec {
+         gap: 7px;
+         padding: 9px 7px;
+     }
+
+     .vd-spec-icon {
+         width: 27px;
+         height: 27px;
+         font-size: 14px;
+     }
+
+     .vd-spec-content strong {
+         font-size: 10px;
+     }
+ }
+
+ /* Reduced motion preference */
+
+ @media (prefers-reduced-motion: reduce) {
+
+     .vd-page *,
+     .vd-page *::before,
+     .vd-page *::after {
+         scroll-behavior: auto !important;
+         animation-duration: 0.01ms !important;
+         animation-iteration-count: 1 !important;
+         transition-duration: 0.01ms !important;
+     }
+ }
